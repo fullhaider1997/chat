@@ -9,6 +9,7 @@ jobs:
       working-directory: ./server
       steps:
         - checkout
+        - run: cd server
         - run: npm test
         - run: npm start
 
