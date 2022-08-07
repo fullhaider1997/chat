@@ -36,6 +36,9 @@ export default function TeamChannelPreview({ channel, type }) {
       onClick={() => {
         console.log(channel);
       }}
-    ></div>
+    >
+
+        {type ==="team" ? <ChannelPreview/> : <DirectPreview/>}
+    </div>
   );
 }

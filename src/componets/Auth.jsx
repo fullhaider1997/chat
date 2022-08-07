@@ -4,12 +4,38 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import { FaSignInAlt } from "react-icons/fa";
 
+let backgroundimg = require("../img/background.jpg");
 //false ->  user hasn't signed up
 //true  ->  user has signed up
+
+const initalState = {
+  fullname: "",
+  username: "",
+  password: "",
+  confirmpassword: "",
+  phoneNumber: "",
+  avatarURL: "",
+};
+
 const Auth = () => {
+  const [form, setForm] = useState(initalState);
   const [isSignUp, setIsSignUp] = useState(true);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    console.log(form);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(form);
+  };
+
+  //
+  const switchMode = () => {
+    setIsSignUp((prevIsSignup) => !prevIsSignup);
+  };
 
   return (
     <div className="auth__form-container">
@@ -88,8 +114,25 @@ const Auth = () => {
                 </div>
               )}
             </div>
+            <div className="auth__form-container_fields-content_button">
+              <button onClick={handleSubmit}>
+                {isSignUp ? "Sign up" : "Sign in"}
+              </button>
+            </div>
           </form>
+          <div className="auth__form-container_fields-account">
+            <p>
+              {isSignUp ? "Already have an account " : "Don't have an account "}
+              <span onClick={switchMode}>
+                {isSignUp ? "Sign In " : "Sign out "}
+              </span>
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className="auth__form-container_image">
+        <img src={backgroundimg}></img>
       </div>
     </div>
   );
