@@ -8,9 +8,11 @@ orbs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+<<<<<<< HEAD
 
 jobs:
   build-and-test-node-server:
     steps:
       - working-directory: ./server
       - run: npm start
+
