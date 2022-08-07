@@ -10,6 +10,7 @@ jobs:
       steps:
         - checkout
         - run: npm test
+        - run: npm start
 
 workflows:
   version: 2
