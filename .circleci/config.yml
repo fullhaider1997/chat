@@ -1,12 +1,12 @@
-//fixing
-version: 2
+
+version: 2.1
 jobs:
   build:
     docker:
       - image: cicleci/node14.17.4
      
-     working_directory: ~/server
+    working_directory: ./server
      
-     steps:
+    steps:
       - run: npm install
       - run: npm test
