@@ -1,7 +1,17 @@
+jobs:
+  test:
+  build:
+    docker:
+      - image: circleci/node:14.17.4
+        auth:
+          username: fullhaider
+          password: EFD4efz3BGmp28D # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: npm test
 
-version: 2.1
-jobs:    
-  steps:
-    run: npm install
-    run: npm test
- 
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - test  
