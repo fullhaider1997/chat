@@ -1,17 +1,18 @@
-version: 2.0
+version: 2
 jobs:
   test:
-    working_directory: ~/server
+    working-directory: ~/chat
     docker:
-        - image: circleci/node:14.17.4
+        - image: circleci/node:14.17.4 
           auth:
             username: fullhaider
             password: EFD4efz3BGmp28D # context / project UI env-var reference
     steps:
         - checkout
-        - run: npm install jest
+        - run: ls
+        - name: Runs server tests
+          working_directory: ./server
         - run: npm test
-        - run: npm start
 
 workflows:
   version: 2
@@ -19,4 +20,3 @@ workflows:
   build_test:
     jobs:
       - test  
-
