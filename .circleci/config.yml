@@ -1,6 +1,6 @@
 version: 2
 orbs:
-  node: circleci/node@14.17.4 
+  node: circleci/node@5.0.2
 jobs:
   test:
     working-directory: ~/chat/server
