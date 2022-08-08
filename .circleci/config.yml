@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test:
-    working-directory: ~/chat/server
+    working_directory: ~/chat/server
     docker:
         - image: circleci/node:14.17.4 
           auth:
@@ -9,15 +9,13 @@ jobs:
             password: EFD4efz3BGmp28D # context / project UI env-var reference
     steps:
         - checkout
-        - node/install-packages:
-            pkg-manager: npm
         - run: pwd
         - run: ls
-        - run: npm run test
+        - run: npm test
 
 workflows:
   version: 2
 
   build_test:
     jobs:
-      - test   
+      - test  
