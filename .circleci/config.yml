@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test:
-    working-directory: ~/chat/server
+    working_directory: ~/chat/server
     docker:
         - image: circleci/node:14.17.4 
           auth:
