@@ -20,4 +20,4 @@ workflows:
 
   build_test:
     jobs:
-      - test  
+      - test   
