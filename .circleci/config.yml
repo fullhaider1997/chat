@@ -9,6 +9,11 @@ jobs:
             password: EFD4efz3BGmp28D # context / project UI env-var reference
     steps:
         - checkout
+        - restore_cache:
+            keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+        - run: npm install
         - run: pwd
         - run: ls
         - run: jest
