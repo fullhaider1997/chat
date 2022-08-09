@@ -11,7 +11,7 @@ jobs:
         - checkout
         - run: pwd
         - run: ls
-        - run: npm test
+        - run: jest
 
 workflows:
   version: 2
